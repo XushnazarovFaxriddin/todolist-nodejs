@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>What's the Plan for Today</h2>
+        <form action="/todolist" id="my_form" method="POST">
+            <input type="text" id="input" name="ToDo" placeholder="Add a todo">
+            <button class="button" onclick="validate(event)" type="submit" id="button">Add Todo</button>
+        </form>
+        <p id="error"></p>
+        <div class="line">
+            <ul id="todolist">
+                <!-- boshlash -->
+                <% for(var i=0;i<arr.length; i++) { %>
+                    <li>
+                        <%= arr[i].id + ': ' + arr[i].name  %>
+                            <a href="#" id="check">
+                                <i class="far fa-check-circle check"></i>
+                            </a>
+                            <a href="/todolist/<%= arr[i].id  %>" id="delete">
+                                <i class="far fa-times-circle delete"></i>
+                            </a>
+                            <a href="" id="edit">
+                                <i class="far fa-edit edit"></i>
+                            </a>
+                    </li>
+                    <% } %>
+                        <!-- tugash -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script type="text/javascript"> -->
+    <script>
+        function validate(event) {
+
+            event.preventDefault();
+            if (document.getElementById("input").value == "") {
+                document.getElementById("error").innerHTML = "Bo'sh bo'lishi mumkin emas!!!";
+            } else {
+                document.getElementById("my_form").submit()
+            }
+            console.log(event)
+        }
+
+        /*$(document).ready(function() {
+                                                    $("#input").change(function() {
+                                                        var input = $(this).val();
+                                                        $('#todolist').append('<li>' + input + ' <a href="#" id="check"><i class="far fa-check-circle check"></i></a> <a href="#" id="delete"><i class="far fa-times-circle delete"></i></a> <a href="" id="edit"><i class="far fa-edit edit"></i></a> </li>');
+                                                        $(this).val('');
+                                                    });
+
+                                                });*/
+    </script>
+</body>
+
+</html>

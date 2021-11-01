@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: capitalize;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #131925;
+}
+
+.container {
+    width: 450px;
+    height: 450px;
+    /* overflow-y: auto; */
+}
+
+h2 {
+    margin: 20px 0;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+}
+
+#input {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border: 3px solid #421BAC;
+    border-radius: 5px;
+    background-color: #131925;
+    color: #fff;
+    padding: 0 10px;
+    margin: 15px 0;
+}
+
+#input::placeholder {
+    color: #fff;
+    font-weight: 400;
+}
+
+.button {
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 0 10px;
+    background-image: linear-gradient(to right, #5C23FF, #901DFF);
+    color: #fff;
+    text-decoration: none;
+    margin-left: -91px;
+}
+
+.button:hover {
+    cursor: pointer;
+    color: #fff;
+    opacity: .9;
+}
+
+#todolist li {
+    padding: 15px;
+    margin: 10px 0;
+    color: #fff;
+    border-radius: 7px;
+    position: relative;
+    list-style-type: none;
+}
+
+#todolist li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#todolist li:nth-child(2n+1) {
+    background-image: linear-gradient(to right, #1493FE, #116FFE);
+}
+
+#todolist li:nth-child(2n) {
+    background-image: linear-gradient(to right, #FD6913, #FD4A10);
+}
+
+#todolist li:nth-child(3n) {
+    background-image: linear-gradient(to right, #540DFC, #8C00F7);
+}
+
+#todolist li:nth-child(4n) {
+    background-image: linear-gradient(to right, #FE0CEA, #F9017E);
+}
+
+#todolist .delete,
+.edit,
+.check {
+    position: absolute;
+    cursor: pointer;
+    color: #fff;
+}
+
+#todolist .delete {
+    right: 40px;
+}
+
+#todolist .edit {
+    right: 15px;
+}
+
+#todolist .check {
+    right: 63px;
+}
+
+#todolist .checked {
+    background: red;
+    text-decoration: line-through;
+    transition: .2s;
+}
+
+#error {
+    color: white;
+}
